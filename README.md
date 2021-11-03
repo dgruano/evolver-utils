@@ -1,4 +1,5 @@
-#evolver-utils
+# evolver-utils
+
 This is a set of Python scripts we use in the SyntheCell
 team to analyse data and interact with the eVOLVER. I coded
 everything using a Mac, so there may be some parts not
@@ -21,4 +22,33 @@ python deleteCal.py calibrations.json -n <cal_name>
 
 # Upload new calibration file
 scp ./calibrations.json pi@<evolver_ip>:evolver/evolver/calibrations.json
+```
+
+## Change LED Power
+
+Using `changeLEDPower.py` you can modify the eVOLVER configuration
+with the desired, individual LED powers.
+
+You can give the script a single power (to update the 16 smart-sleeves)
+with the same one:
+```shell
+python changeLEDPower.py -a 192.168.1.2 -p 2060 
+```
+
+or, alternatively, you can specify the power for every single sleeve (total of 16):
+```shell
+python changeLEDPower.py -a 192.168.1.2 -p 2060 2060 2060 2060 2062 2062 2062 2062 2064 2064 2064 2064
+2068 2068 2068 2068
+```
+Run `python changeLEDPower.py -h` for additional info.
+
+**Important:** You may want to backup the original configuration file
+before using this script, in case something goes wrong. You can do it like this:
+
+```shell
+# Log in to your eVOLVER machine using ssh:
+ssh pi@<evolver_ip>
+
+# Backup your configuration file, just in case:
+cp evolver/evolver/conf.yml evolver/evolver/conf.yml.bak
 ```
