@@ -1,6 +1,6 @@
 # evolver-utils
 
-This is a set of Python scripts we use in the SyntheCell
+This is a set of Python scripts and other resources we use in the SyntheCell
 team to analyse data and interact with the eVOLVER. I coded
 everything using a Mac, so there may be some parts not
 optimised for Windows.
@@ -52,3 +52,7 @@ ssh pi@<evolver_ip>
 # Backup your configuration file, just in case:
 cp evolver/evolver/conf.yml evolver/evolver/conf.yml.bak
 ```
+
+## Calculate eVOLVER consumption
+
+You can use the Excel sheet `eVOLVER Consumption.xlsx` to calculate the amount of medium you need for your experiment.
