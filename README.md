@@ -53,6 +53,15 @@ ssh pi@<evolver_ip>
 cp evolver/evolver/conf.yml evolver/evolver/conf.yml.bak
 ```
 
+## Get OD at any given point
+Simply run 
+```
+python get_od.py </path/to/experiment_expt/OD>
+```
+
+This is a loop script that reads the OD data from an experiment and lets you query for a specific vial and experiment time (in hours), and it will return the 10-value OD average around that time.  If you want the OD of all vials for a specified time, input -1 as the vial number.
+
+
 ## Calculate eVOLVER consumption
 
 You can use the Excel sheet `eVOLVER Consumption.xlsx` to calculate the amount of medium you need for your experiment.
